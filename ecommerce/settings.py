@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+from decouple import config
 from pathlib import Path
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -139,5 +141,5 @@ REST_FRAMEWORK = {
     ],
 }
 
-STRIPE_PUBLIC_KEY = 'pk_test_51RksFgBTHRFKfkWqFPrZgX1dl6iHQ4K9T52dq53x6p1jHenmiAkeqweto5IsKol5wFh9sz83nD87ShhZQEWUI4Tj00vqztKFhd'
-STRIPE_SECRET_KEY = 'sk_test_51RksFgBTHRFKfkWqnkUyg3rdOCu81KRT9e04tvJoQLkZ6bHW2CpoyOhxzhDGKWWdq1MHyxM2XhkEKj4v5yeXKADK00cG2NNdfs'
+SECRET_KEY = config('SECRET_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
