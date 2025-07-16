@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center">
+        <h1 class="mb-4">Welcome to the <span class="text-primary">E-Commerce Store</span></h1>
+        <p class="lead">Hello, {{ request.user.username }}!</p>
+
+        <div class="mt-4">
+            <a href="{% url 'product_list' %}" class="btn btn-outline-primary btn-lg me-2">Browse Products</a>
+            <a href="{% url 'cart_detail' %}" class="btn btn-outline-success btn-lg me-2">View Cart</a>
+            <a href="{% url 'order_history' %}" class="btn btn-outline-info btn-lg me-2">Order History</a>
+            <a href="{% url 'logout' %}" class="btn btn-danger btn-lg">Logout</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

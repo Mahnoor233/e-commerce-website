@@ -1,0 +1,18 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+  <div style="padding: 30px;"> <!-- Add spacing on all sides -->
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: ${{ product.price }}</p>
+
+    {% if product.image %}
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 300px; margin-bottom: 20px;">
+    {% endif %}
+
+    <form action="{% url 'cart_add' product.id %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">Add to Cart</button>
+    </form>
+  </div>
+{% endblock %}
