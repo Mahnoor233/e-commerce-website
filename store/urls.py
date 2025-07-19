@@ -16,6 +16,7 @@ urlpatterns = [
     path('cancel/', views.cancel, name='cancel'),
     path('orders/', views.order_history, name='order_history'),
     path('api/', include('store.api_urls')),
+     path('accounts/login/', views.login_view, name='login'),
    
 
 ]
